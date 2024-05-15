@@ -1,0 +1,25 @@
+{
+  "name": "udlf",
+  "displayName": "UDLF",
+  "description": "UDLF programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "udlf",
+      "aliases": ["UDLF Programming language", "udlf"],
+      "extensions": [".udlf"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "udlf",
+      "scopeName": "source.udlf",
+      "path": "./syntaxes/udlf.tmLanguage.json"
+    }]
+  }
+}
