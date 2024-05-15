@@ -9,17 +9,20 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#datatypes"
+		},
+		{
 			"include": "#strings"
 		},
 		{
 			"include": "#control"
-		}
+		}		
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.udlf",
-				"match": "\\b(external|internal|decoder|in_map)\\b"
+				"match": "\\b(external|internal|decoder|in_map|session)\\b"
 		
 		}]
 		},
@@ -37,8 +40,19 @@
 					"name": "comment.line.udlf",
 					"match": "//.*$"
 				}]
+		},
+		"datatypes": {
+			"patterns": [{
+					"name": "storage.type.udlf",
+					"match": "\\b(int|string|ascii|long|date|boolean|map)\\b"
+				}]
+		},
+		"control": {
+			"patterns": [{
+					"name": "keyword.control.udlf",
+					"match": "\\b()\\b"
+				}]
 		}
-		
 	},
 	"scopeName": "source.udlf"
 }
