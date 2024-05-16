@@ -16,13 +16,19 @@
 		},
 		{
 			"include": "#control"
-		}		
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#functions"
+		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.udlf",
-				"match": "\\b(external|internal|decoder|in_map|session)\\b"
+				"match": "\\b(external|internal|decoder|in_map|session|out_map|encoder)\\b"
 		
 		}]
 		},
@@ -32,27 +38,63 @@
 			"end": "\"",
 			"patterns": [{
 					"name": "constant.character.escape.udlf",
-					"match": "\\\\."
+					"match": "\\\\"
 				}]
 		},
 		"comments": {
 			"patterns": [{
-					"name": "comment.line.udlf",
-					"match": "//.*$"
-				}]
+					"name": "comment.line.udlf.double.slash",
+					"begin": "//",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.udlf"
+						}
+					},
+					"end": "$",
+					"endCaptures": {
+						"0": {
+							"name": "comment.line.double.slash.udlf"
+						}
+					}
+				},
+			{
+				"name": "comment.line.udlf.double-dash",
+				"begin": "--",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.udlf"
+					}
+				},
+				"end": "$",
+				"endCaptures": {
+					"0": {
+						"name": "comment.line.double-dash.udlf"
+					}
+				}
+			}]
 		},
 		"datatypes": {
 			"patterns": [{
 					"name": "storage.type.udlf",
-					"match": "\\b(int|string|ascii|long|date|boolean|map)\\b"
+					"match": "\\b(int|string|ascii|long)\\b"
 				}]
 		},
-		"control": {
+		
+		"constant":{
 			"patterns": [{
-					"name": "keyword.control.udlf",
-					"match": "\\b()\\b"
-				}]
-		}
+				"name": "constant.numeric.udlf",
+				"match": "\\b(0x[0-9a-fA-F]+|\\d+)\\b"
+			}]
+		},
+		"functions": {
+			"patterns": [
+			  {
+				"name": "support.function.udlf",
+				"match": "\\b(terminated_by|identified_by|external_only)\\b"
+			  }
+			]
+		  }
+		
 	},
 	"scopeName": "source.udlf"
 }

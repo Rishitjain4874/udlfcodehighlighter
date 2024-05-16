@@ -10,16 +10,42 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "udlf",
-      "aliases": ["UDLF Programming language", "udlf"],
-      "extensions": [".udlf"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "udlf",
-      "scopeName": "source.udlf",
-      "path": "./syntaxes/udlf.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "udlf",
+        "aliases": [
+          "UDLF Programming language",
+          "udlf"
+        ],
+        "extensions": [
+          ".udlf"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "udlf",
+        "scopeName": "source.udlf",
+        "path": "./syntaxes/udlf.tmLanguage.json"
+      }
+    ],
+    "tokenColors": [
+      {
+        "scope": "constant.numeric.udlf",
+        "settings": {
+          "foreground": "#ff0000"
+        }
+      },
+      {
+        "scope": "support.function.udlf",
+        "settings": {
+          "foreground": "#00ff00"
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "compile": "^0.0.2"
   }
 }
